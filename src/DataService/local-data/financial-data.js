@@ -1,31 +1,28 @@
 /* tslint:disable */
-export const REGIONS = [
+export const COUNTRIES = [
     {
-        "Region": "North America",
-        "Countries": ["Canada", "United States", "Mexico"]
+        "Country": "America",
+        "Cities": ["New York", "Chicago", "Dallas", "Los Angeles", "Boston", "Austin", "Florida"]
     },
     {
-        "Region": "Middle East",
-        "Countries": ["Turkey", "Iraq", "Saudi Arabia", "Syria", "UAE", "Israel", "Jordan", "Lebanon", "Oman", "Kuwait", "Qatar", "Bahrain", "Iran"]
+        "Country": "Germany",
+        "Cities": ["Dortmund", "Stuttgard", "München", "Berlin", "Hamburg"]
     },
     {
-        "Region": "Europe",
-        "Countries": ["Russia", "Germany", "France", "United Kingdom", "Italy", "Spain", "Poland", "Romania", "Netherlands", "Belgium", "Greece",
-            "Portugal", "Czech Republic", "Hungary", "Sweden", "Austria", "Switzerland", "Bulgaria", "Denmark", "Finland", "Slovakia", "Norway",
-            "Ireland", "Croatia", "Slovenia", "Estonia", "Iceland",]
+        "Country": "United Kingdom",
+        "Cities": ["Manchester", "Liverpool", "Sheffield", "Leeds", "Birmingham", "London"]
     },
     {
-        "Region": "Africa",
-        "Countries": ["Nigeria", "Ethiopia", "Egypt", "South Africa", "Algeria", "Morocco", "Cameroon", "Niger", "Senegal", "Tunisia", "Libya"]
+        "Country": "Italy",
+        "Cities": ["Milano", "Firenze", "Roma", "Napoli", "Catania", "Palermo", "Venezia"]
     },
     {
-        "Region": "Asia Pacific",
-        "Countries": ["Afghanistan", "Australia", "Azerbaijan", "China", "Hong Kong", "India", "Indonesia",
-            "Japan", "Malaysia", "New Zealand", "Pakistan", "Philippines", "Korea", "Singapore", "Taiwan", "Thailand"]
+        "Country": "France",
+        "Cities": ["Nantes", "Paris", "Toulouse", "Montpellier", "Marseille", "Nice", "Lyon"]
     },
     {
-        "Region": "South America",
-        "Countries": ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Peru", "Suriname", "Uruguay", "Venezuela"]
+        "Country": "Spain",
+        "Cities": ["Madrid", "Zaragoza", "València", "Murcia", "Málaga",  "Barcelona"]
     },
 
 ]
@@ -34,8 +31,8 @@ export const DealType = [
     "Buy", "Sell"
 ]
 
-export const Contract = [
-    "Forwards", "Futures", "Options", "Swap", "CFD"
+export const Stock = [
+    "OX", "USD", "SHIB", "TETHERUS", "XEC", "18C", "BITCOIN", "ETHERIUM", "INCH", "BUSD", "GBP", "EUR"
 ]
 
 export const Settlement = [
@@ -44,31 +41,31 @@ export const Settlement = [
 
 export const MOCKFINANCEDATA = [
     {
-        "IndGrou": "Airlines",
-        "IndSect": "Consumer, Cyclical",
-        "IndSubg": "Airlines",
-        "SecType": "PUBLIC",
+        "Category": "Test Data",
+        "Industry": "Informational technology",
+        "Sector": "Technology",
+        "SubSector": "Machine learning",
+        "SectorType": "PRIVATE",
         // tslint:disable-next-line:object-literal-sort-keys
-        "CpnTyp": "FIXED",
-        "IssuerN": "AMERICAN AIRLINES GROUP",
-        "Moodys": "WR",
-        "Fitch": "N.A.",
-        "DBRS": "N.A.",
-        "CollatT": "NEW MONEY",
-        "Curncy": "USD",
-        "Security": "001765866 Pfd",
-        "sector": "Pfd",
-        "CUSIP": "1765866",
-        "Ticker": "AAL",
-        "Cpn": "7.875",
-        "Maturity": "7/13/1939",
-        "KRD_3YR": 0.00006,
-        "RISK_COUNTRY": "",
-        "MUNI_SECTOR": "",
-        "ZV_SPREAD": 28.302,
-        "KRD_5YR": 0,
+        "Type": "DEFAULT",
+        "FullName": "Progress Software",
+        "Location": "Boston",
+        "FitchRating": "Private",
+        "DBRSRating": "Private",
+        "Currency": "USD",
+        "SecurityCode": "12345678910 IT",
+        "SectorCode": "IT",
+        "CUSIP": "987654321",
+        "Ticker": "PGRS",
+        "Cpn": "40.875",
+        "Maturity": "1981",
+        "KRD_5YR": 2.00006,
+        "Address": "Bedford",
+        "Phone": "+1 111 111 111",
+        "Number": 28.302,
+        "KRD_10YR": 0,
         "KRD_1YR": -0.00187,
-        "PD_WALA": null
+        "SpecialCode": null
     }];
 
 export const DATA = [
@@ -299,10 +296,10 @@ export class FinancialData {
             const dataObj = Object.assign({}, DATA[rand]);
 
             dataObj.Settlement = Settlement[this.generateRandomNumber(0, 1)];
-            dataObj.Contract = Contract[this.generateRandomNumber(0, 4)];
-            const region = REGIONS[this.generateRandomNumber(0, 5)];
-            dataObj.Region = region.Region;
-            dataObj.Country = this.randomizeCountry(region);
+            dataObj.Stock = Stock[this.generateRandomNumber(0, 11)];
+            const country = COUNTRIES[this.generateRandomNumber(0, 5)];
+            dataObj.Country = country.Country;
+            dataObj.City = this.randomizeCity(country);
             // for (let y = 0; y < 80; y++) {
             //     dataObj["Text" + y] = "Text";
             // }
@@ -390,36 +387,36 @@ export class FinancialData {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    randomizeCountry(region) {
-        let country;
-        switch (region.Region) {
-            case 'North America': {
-                country = region.Countries[this.generateRandomNumber(0, 2)];
+    randomizeCity(country) {
+        let city;
+        switch (country.Country) {
+            case 'America': {
+                city = country.Cities[this.generateRandomNumber(0, 6)];
                 break;
             }
-            case 'South America': {
-                country = region.Countries[this.generateRandomNumber(0, 11)];
+            case 'Germany': {
+                city = country.Cities[this.generateRandomNumber(0, 4)];
                 break;
             }
-            case 'Europe': {
-                country = region.Countries[this.generateRandomNumber(0, 26)];
+            case 'United Kingdom': {
+                city = country.Cities[this.generateRandomNumber(0, 5)];
                 break;
             }
-            case 'Asia Pacific': {
-                country = region.Countries[this.generateRandomNumber(0, 15)];
+            case 'Italy': {
+                city = country.Cities[this.generateRandomNumber(0, 6)];
                 break;
             }
-            case 'Africa': {
-                country = region.Countries[this.generateRandomNumber(0, 11)];
+            case 'France': {
+                city = country.Cities[this.generateRandomNumber(0, 6)];
                 break;
             }
-            case 'Middle East': {
-                country = region.Countries[this.generateRandomNumber(0, 12)];
+            case 'Spain': {
+                city = country.Cities[this.generateRandomNumber(0, 5)];
                 break;
             }
             default:
                 break;
         }
-        return country;
+        return city;
     }
 }

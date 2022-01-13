@@ -275,12 +275,7 @@ export const KendoGrid = (props) => {
 
                                 dataItemKey='ID'
                             >
-                                <GridColumn field={'Category'} width={120} />
-                                <GridColumn field={'Type'} width={100} />
-                                <GridColumn field={'Contract'} width={110} />
-                                <GridColumn field={'Settlement'} width={100} />
-                                <GridColumn field={'Region'} width={110} />
-                                <GridColumn field={'Country'} width={100} />
+                                <GridColumn field={'Stock'} width={110} />
                                 <GridColumn field={'Open Price'} width={120} filter={'numeric'} format="{0:c4}" />
                                 <GridColumn field={'Price'} width={130} filter={'numeric'} cell={PriceCell} />
                                 <GridColumn field={'Change'} width={90} className={'numeric change'} filter={'numeric'} headerClassName={'headerAlignStyle'} cell={ChangeCell} />
@@ -295,81 +290,111 @@ export const KendoGrid = (props) => {
                                 <GridColumn field={'Low(Y)'} width={110} filter={'numeric'} format={'{0:c4}'} />
                                 <GridColumn field={'Start(Y)'} width={110} filter={'numeric'} format={'{0:c4}'} />
                                 <GridColumn field={'Chart'} width={60} className={'center-text'} cell={ChartCell} />
-                                <GridColumn field={'IndGrou'} width={100} filterable={false} />
-                                <GridColumn field={'IndSect'} width={120} filterable={false} resizable={true} />
-                                <GridColumn field={'IndSubg'} width={100} filterable={false} />
-                                <GridColumn field={'SecType'} width={90} filterable={false} />
-                                <GridColumn field={'IssuerN'} width={170} filterable={false} resizable={true} />
-                                <GridColumn field={'Moodys'} width={60} filterable={false} />
-                                <GridColumn field={'Fitch'} width={60} filterable={false} />
-                                <GridColumn field={'DBRS'} width={60} filterable={false} />
-                                <GridColumn field={'CollatT'} width={90} filterable={false} />
-                                <GridColumn field={'Curncy'} width={60} filterable={false} />
-                                <GridColumn field={'Security'} width={120} filterable={false} />
-                                <GridColumn field={'sector'} width={80} filterable={false} />
-                                <GridColumn field={'CUSIP'} width={100} filterable={false} />
+                                <GridColumn field={'Country'} width={110} />
+                                <GridColumn field={'City'} width={100} />
+                                <GridColumn field={'Category'} width={120} />
+                                <GridColumn field={'Type'} width={100} />
+                                <GridColumn field={'Settlement'} width={100} />
+                                <GridColumn field={'Industry'} width={100} filterable={false} />
+                                <GridColumn field={'Sector'} width={120} filterable={false} resizable={true} />
+                                <GridColumn field={'SubSector'} width={100} filterable={false} />
+                                <GridColumn field={'SectorType'} width={90} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={170} filterable={false} resizable={true} />
+                                <GridColumn field={'FullName'} width={60} filterable={false} />
+                                <GridColumn field={'FitchRating'} width={60} filterable={false} />
+                                <GridColumn field={'DBRSRating'} width={60} filterable={false} />
+                                <GridColumn field={'Address'} width={90} filterable={false} />
+                                <GridColumn field={'Currency'} width={60} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={120} filterable={false} />
+                                <GridColumn field={'SectorCode'} width={80} filterable={false} />
+                                <GridColumn field={'Phone'} width={100} filterable={false} />
                                 <GridColumn field={'Ticker'} width={60} filterable={false} />
                                 <GridColumn field={'Cpn'} width={80} filterable={false} />
                                 <GridColumn field={'Maturity'} width={120} filterable={false} />
-                                <GridColumn field={'KRD_3YR'} width={110} filterable={false} />
-                                <GridColumn field={'ZV_SPREAD'} width={90} filterable={false} />
+                                <GridColumn field={'KRD_10YR'} width={110} filterable={false} />
+                                <GridColumn field={'CUSIP'} width={90} filterable={false} />
                                 <GridColumn field={'KRD_5YR'} width={50} filterable={false} />
                                 <GridColumn field={'KRD_1YR'} width={80} filterable={false} />
-                                <GridColumn field={'IndGrou'} width={100} filterable={false} />
-                                <GridColumn field={'IndSect'} width={100} filterable={false} resizable={true} />
-                                <GridColumn field={'IndSubg'} width={100} filterable={false} />
-                                <GridColumn field={'SecType'} width={90} filterable={false} />
-                                <GridColumn field={'IssuerN'} width={170} filterable={false} resizable={true} />
-                                <GridColumn field={'Moodys'} width={60} filterable={false} />
-                                <GridColumn field={'Fitch'} width={60} filterable={false} />
-                                <GridColumn field={'DBRS'} width={60} filterable={false} />
-                                <GridColumn field={'CollatT'} width={90} filterable={false} />
-                                <GridColumn field={'Curncy'} width={60} filterable={false} />
-                                <GridColumn field={'Security'} width={120} filterable={false} />
-                                <GridColumn field={'sector'} width={80} filterable={false} />
-                                <GridColumn field={'CUSIP'} width={100} filterable={false} />
+                                <GridColumn field={'Industry'} width={100} filterable={false} />
+                                <GridColumn field={'Sector'} width={120} filterable={false} resizable={true} />
+                                <GridColumn field={'SubSector'} width={100} filterable={false} />
+                                <GridColumn field={'SectorType'} width={90} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={170} filterable={false} resizable={true} />
+                                <GridColumn field={'FullName'} width={60} filterable={false} />
+                                <GridColumn field={'FitchRating'} width={60} filterable={false} />
+                                <GridColumn field={'DBRSRating'} width={60} filterable={false} />
+                                <GridColumn field={'Address'} width={90} filterable={false} />
+                                <GridColumn field={'Currency'} width={60} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={120} filterable={false} />
+                                <GridColumn field={'SectorCode'} width={80} filterable={false} />
+                                <GridColumn field={'Phone'} width={100} filterable={false} />
                                 <GridColumn field={'Ticker'} width={60} filterable={false} />
                                 <GridColumn field={'Cpn'} width={80} filterable={false} />
                                 <GridColumn field={'Maturity'} width={120} filterable={false} />
-                                <GridColumn field={'KRD_3YR'} width={110} filterable={false} />
-                                <GridColumn field={'ZV_SPREAD'} width={90} filterable={false} />
+                                <GridColumn field={'KRD_10YR'} width={110} filterable={false} />
+                                <GridColumn field={'CUSIP'} width={90} filterable={false} />
                                 <GridColumn field={'KRD_5YR'} width={50} filterable={false} />
                                 <GridColumn field={'KRD_1YR'} width={80} filterable={false} />
-                                <GridColumn field={'IndGrou'} width={100} filterable={false} />
-                                <GridColumn field={'IndSect'} width={100} filterable={false} />
-                                <GridColumn field={'IndSubg'} width={100} filterable={false} />
-                                <GridColumn field={'SecType'} width={90} filterable={false} />
-                                <GridColumn field={'IssuerN'} width={170} filterable={false} />
-                                <GridColumn field={'Moodys'} width={60} filterable={false} />
-                                <GridColumn field={'Fitch'} width={60} filterable={false} />
-                                <GridColumn field={'DBRS'} width={60} filterable={false} />
-                                <GridColumn field={'CollatT'} width={90} filterable={false} />
-                                <GridColumn field={'Curncy'} width={60} filterable={false} />
-                                <GridColumn field={'Security'} width={120} filterable={false} />
-                                <GridColumn field={'sector'} width={80} filterable={false} />
-                                <GridColumn field={'CUSIP'} width={100} filterable={false} />
+                                <GridColumn field={'Industry'} width={100} filterable={false} />
+                                <GridColumn field={'Sector'} width={120} filterable={false} resizable={true} />
+                                <GridColumn field={'SubSector'} width={100} filterable={false} />
+                                <GridColumn field={'SectorType'} width={90} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={170} filterable={false} resizable={true} />
+                                <GridColumn field={'FullName'} width={60} filterable={false} />
+                                <GridColumn field={'FitchRating'} width={60} filterable={false} />
+                                <GridColumn field={'DBRSRating'} width={60} filterable={false} />
+                                <GridColumn field={'Address'} width={90} filterable={false} />
+                                <GridColumn field={'Currency'} width={60} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={120} filterable={false} />
+                                <GridColumn field={'SectorCode'} width={80} filterable={false} />
+                                <GridColumn field={'Phone'} width={100} filterable={false} />
                                 <GridColumn field={'Ticker'} width={60} filterable={false} />
                                 <GridColumn field={'Cpn'} width={80} filterable={false} />
                                 <GridColumn field={'Maturity'} width={120} filterable={false} />
-                                <GridColumn field={'KRD_3YR'} width={110} filterable={false} />
-                                <GridColumn field={'ZV_SPREAD'} width={90} filterable={false} />
+                                <GridColumn field={'KRD_10YR'} width={110} filterable={false} />
+                                <GridColumn field={'CUSIP'} width={90} filterable={false} />
                                 <GridColumn field={'KRD_5YR'} width={50} filterable={false} />
                                 <GridColumn field={'KRD_1YR'} width={80} filterable={false} />
-                                <GridColumn field={'IndGrou'} width={100} filterable={false} />
-                                <GridColumn field={'IndSect'} width={100} filterable={false} />
-                                <GridColumn field={'IndSubg'} width={100} filterable={false} />
-                                <GridColumn field={'SecType'} width={90} filterable={false} />
-                                <GridColumn field={'IssuerN'} width={170} filterable={false} />
-                                <GridColumn field={'Moodys'} width={60} filterable={false} />
-                                <GridColumn field={'Fitch'} width={60} filterable={false} />
-                                <GridColumn field={'DBRS'} width={60} filterable={false} />
-                                <GridColumn field={'CollatT'} width={90} filterable={false} />
-                                <GridColumn field={'Curncy'} width={60} filterable={false} />
-                                <GridColumn field={'Security'} width={120} filterable={false} />
-                                <GridColumn field={'sector'} width={80} filterable={false} />
-                                <GridColumn field={'CUSIP'} width={100} filterable={false} />
+                                <GridColumn field={'Industry'} width={100} filterable={false} />
+                                <GridColumn field={'Sector'} width={120} filterable={false} resizable={true} />
+                                <GridColumn field={'SubSector'} width={100} filterable={false} />
+                                <GridColumn field={'SectorType'} width={90} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={170} filterable={false} resizable={true} />
+                                <GridColumn field={'FullName'} width={60} filterable={false} />
+                                <GridColumn field={'FitchRating'} width={60} filterable={false} />
+                                <GridColumn field={'DBRSRating'} width={60} filterable={false} />
+                                <GridColumn field={'Address'} width={90} filterable={false} />
+                                <GridColumn field={'Currency'} width={60} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={120} filterable={false} />
+                                <GridColumn field={'SectorCode'} width={80} filterable={false} />
+                                <GridColumn field={'Phone'} width={100} filterable={false} />
                                 <GridColumn field={'Ticker'} width={60} filterable={false} />
                                 <GridColumn field={'Cpn'} width={80} filterable={false} />
+                                <GridColumn field={'Maturity'} width={120} filterable={false} />
+                                <GridColumn field={'KRD_10YR'} width={110} filterable={false} />
+                                <GridColumn field={'CUSIP'} width={90} filterable={false} />
+                                <GridColumn field={'KRD_5YR'} width={50} filterable={false} />
+                                <GridColumn field={'KRD_1YR'} width={80} filterable={false} />
+                                <GridColumn field={'Industry'} width={100} filterable={false} />
+                                <GridColumn field={'Sector'} width={120} filterable={false} resizable={true} />
+                                <GridColumn field={'SubSector'} width={100} filterable={false} />
+                                <GridColumn field={'SectorType'} width={90} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={170} filterable={false} resizable={true} />
+                                <GridColumn field={'FullName'} width={60} filterable={false} />
+                                <GridColumn field={'FitchRating'} width={60} filterable={false} />
+                                <GridColumn field={'DBRSRating'} width={60} filterable={false} />
+                                <GridColumn field={'Address'} width={90} filterable={false} />
+                                <GridColumn field={'Currency'} width={60} filterable={false} />
+                                <GridColumn field={'SecurityCode'} width={120} filterable={false} />
+                                <GridColumn field={'SectorCode'} width={80} filterable={false} />
+                                <GridColumn field={'Phone'} width={100} filterable={false} />
+                                <GridColumn field={'Ticker'} width={60} filterable={false} />
+                                <GridColumn field={'Cpn'} width={80} filterable={false} />
+                                <GridColumn field={'Maturity'} width={120} filterable={false} />
+                                <GridColumn field={'KRD_10YR'} width={110} filterable={false} />
+                                <GridColumn field={'CUSIP'} width={90} filterable={false} />
+                                <GridColumn field={'KRD_5YR'} width={50} filterable={false} />
+                                <GridColumn field={'KRD_1YR'} width={80} filterable={false} />
                             </Grid>
                         </React.Profiler>
                     </div>
