@@ -43,7 +43,7 @@ const BUTTON_META = {
 
 export const KendoGrid = (props) => {
     const intl = useInternationalization();
-    const [_, setForceUpdate] = React.useState(false);
+    // const [_, setForceUpdate] = React.useState(false);
 
 
     const [realUpdate, setRealUpdate] = React.useState(false);
@@ -65,19 +65,19 @@ export const KendoGrid = (props) => {
     const frequencyRef = React.useRef(FREQUENCY_INITIAL);
     const [selectedButton, setSelectedButton] = React.useState("stop");
     const [liveUpdating, setLiveUpdating] = React.useState(false);
-    const lastSelectedIndexRef = React.useRef(0);
+    // const lastSelectedIndexRef = React.useRef(0);
     const debouncedDataReset = React.useMemo(
         () => debounce((currentVolume) => {
             props.onDataReset(currentVolume)
         }, DEBOUNCE_TIME),
-        [props.onDataReset]
+        [props]
     );
 
     React.useEffect(
         () => {
             props.onDataReset(volumeRef.current);
         },
-        []
+        [props]
     );
 
     React.useEffect(() => {
@@ -140,7 +140,7 @@ export const KendoGrid = (props) => {
                 default:
             }
         },
-        [debouncedDataReset, setLiveUpdating, setSelectedButton]
+        [props]
     );
 
     const onProfilerCallback = (
@@ -155,7 +155,7 @@ export const KendoGrid = (props) => {
         if (realUpdate) {
             let currentUpdateTime = [...updateTime];
             currentUpdateTime.push(actualDuration);
-            console.log(updateTime, 'update time')
+            // console.log(updateTime, 'update time')
             setRealUpdate(false);
             setUpdateTime(currentUpdateTime);
             const sum = updateTime.reduce((a, b) => a + b, 0);

@@ -3,7 +3,7 @@ import { changeNegative, changePositive, negative, positive, strongNegative, str
 export function debounce(func, wait) {
     let timeoutID;
     return function (volume, ...args) {
-        console.log(volume, 'inside debounce', args)
+        // console.log(volume, 'inside debounce', args)
         clearTimeout(timeoutID);
         const context = this;
 

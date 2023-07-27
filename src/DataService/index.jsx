@@ -61,7 +61,7 @@ export const DataProvider = (props) => {
 
     const onDataReset = React.useCallback(
         (volume) => {
-            console.log(volume, 'inside onDataReset')
+            // console.log(volume, 'inside onDataReset')
             clearInterval(intervalRef.current);
 
             const financialData = new FinancialData();
@@ -79,23 +79,21 @@ export const DataProvider = (props) => {
                 interval
             );
         },
-        [data]
+        []
     );
 
     const onStartLiveUpdateAll = React.useCallback(
         (interval) => {
-            console.log('here')
             clearInterval(intervalRef.current);
 
             intervalRef.current = setInterval(
                 () => {
-                    console.log(1);
                     setData(oldData => updateAllPrices(oldData))
                 },
                 interval
             );
         },
-        [data]
+        []
     );
 
     const onStopLiveUpdate = React.useCallback(
