@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@progress/kendo-react-buttons';
 import { trends } from "../utils";
 import { classNames } from '@progress/kendo-react-common';
-import { formatNumber } from '@telerik/kendo-intl';
+import { formatNumber } from '@progress/kendo-intl';
 
 export const PriceCell = (props) => {
     const { dataItem, field, className } = props;
