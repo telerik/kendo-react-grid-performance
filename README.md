@@ -1,5 +1,6 @@
 > **Warning**
-> The `kendo-react-grid-performance` repo has moved here https://github.com/telerik/kendo-react/examples/kendo-react-grid-performance
+> The `kendo-react-grid-performance` repo has moved here:
+> https://github.com/telerik/kendo-react/tree/master/examples/kendo-react-grid-performance
 
 To start the application locally, follow these steps:
 
