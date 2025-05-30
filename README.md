@@ -1,4 +1,8 @@
-The start the application locally follow these steps:
+> **Warning**
+> The `kendo-react-grid-performance` repo has moved here:
+> https://github.com/telerik/kendo-react/tree/master/examples/kendo-react-grid-performance
+
+To start the application locally, follow these steps:
 
 1. Clone or download the source code from GitHub.
 1. Install the required dependencies using `npm install --save`.
